@@ -1,4 +1,4 @@
-package prueba;
+package prueba.teacher;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import model.StudentManager;
-import model.StudentManagerIMPL;
-import model.TeacherManager;
-import model.TeacherManagerIMPL;
-import controller.ParaCreatePanel;
-import controller.ParaCreateTeacher;
+import model.student.StudentManager;
+import model.student.StudentManagerIMPL;
+import model.teacher.TeacherManager;
+import model.teacher.TeacherManagerIMPL;
+import controller.student.ParaCreatePanel;
+import controller.teacher.ParaCreateTeacher;
 
 public class PruebaCreateTeacher extends JFrame {
 

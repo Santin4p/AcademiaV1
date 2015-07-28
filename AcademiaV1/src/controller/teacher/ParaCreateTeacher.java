@@ -1,25 +1,28 @@
-package controller;
+package controller.teacher;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import model.Student;
-import model.StudentManager;
-import model.StudentManagerIMPL;
-import view.CreatePanel;
+import model.teacher.Teacher;
+import model.teacher.TeacherManager;
+import view.teacher.CreatePanelTeacher;
 
-import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class ParaCreatePanel extends CreatePanel {
+import javax.swing.SpinnerNumberModel;
 
-	StudentManager instancia;
-	Student currentStudent;
-	public ParaCreatePanel(StudentManager student) {
-		this.instancia = student;
+public class ParaCreateTeacher extends CreatePanelTeacher {
+
+	TeacherManager instancia;
+	Teacher currentTeacher;
+
+	/**
+	 * Create the panel.
+	 */
+
+	public ParaCreateTeacher(TeacherManager instancia) {
+		this.instancia=instancia;
 		eventos();
 	}
 
@@ -27,14 +30,13 @@ public class ParaCreatePanel extends CreatePanel {
 		btnCrearAlumno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!comprobarCampos()) {
-					currentStudent = instancia.createStudent(txtDNI.getText(),
-							txtNombre.getText(), txtApellidos.getText());
-					currentStudent.setBornDate(dateChooser.getDate());
-					currentStudent.setComments(txtObservaciones.getText());
-					instancia.updateStudent(currentStudent);
-					if (currentStudent != null) {
+					currentTeacher = instancia.createTeacher(txtDNI.getText(), txtNombre.getText(), txtApellidos.getText());
+					currentTeacher.setBornDate(dateChooser.getDate());
+					currentTeacher.setSueldo((Float)spinner.getValue());
+					instancia.updateTeacher(currentTeacher);
+					if (currentTeacher != null) {
 						JOptionPane.showMessageDialog(null,
-								"El alumno ha sido introducido correctamente",
+								"El profesor ha sido introducido correctamente",
 								"Exito", JOptionPane.INFORMATION_MESSAGE);
 						vaciarCampos();
 					} else {
@@ -47,14 +49,11 @@ public class ParaCreatePanel extends CreatePanel {
 							JOptionPane.ERROR_MESSAGE);
 				}
 			}
-
 		});
 	}
-
 	private boolean comprobarCampos() {
 		if (txtNombre.getText().isEmpty() && txtApellidos.getText().isEmpty()
 				&& txtDNI.getText().isEmpty()
-				&& txtObservaciones.getText().isEmpty()
 				&& dateChooser.getDate().toString().isEmpty()) {
 			return true;
 		} else {
@@ -65,7 +64,7 @@ public class ParaCreatePanel extends CreatePanel {
 		txtNombre.setText("");
 		txtApellidos.setText("");
 		txtDNI.setText("");
-		txtObservaciones.setText("");
 		dateChooser.setDate(null);
+		spinner.setValue(550);
 	}
 }

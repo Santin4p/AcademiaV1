@@ -1,4 +1,4 @@
-package model;
+package model.teacher;
 import java.util.List;
 
 public interface TeacherManager {

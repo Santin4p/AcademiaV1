@@ -1,7 +1,9 @@
-package model;
+package model.teacher;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import model.Human;
 
 public class Teacher extends Human implements Serializable {
 	private float sueldo;

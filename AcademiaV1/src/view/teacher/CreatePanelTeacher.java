@@ -1,4 +1,4 @@
-package view;
+package view.teacher;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import com.toedter.calendar.JDateChooser;
+
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
@@ -140,13 +141,13 @@ public class CreatePanelTeacher extends JPanel {
 		gbc_spinner.gridy = 5;
 		add(spinner, gbc_spinner);
 		
-		btnCrearAlumno = new JButton("Crear Alumno");
+		btnCrearAlumno = new JButton("Crear Profesor");
 		GridBagConstraints gbc_btnCrearAlumno = new GridBagConstraints();
 		gbc_btnCrearAlumno.anchor = GridBagConstraints.SOUTHEAST;
 		gbc_btnCrearAlumno.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCrearAlumno.gridx = 5;
 		gbc_btnCrearAlumno.gridy = 7;
 		add(btnCrearAlumno, gbc_btnCrearAlumno);
+		spinner.setModel(new SpinnerNumberModel(new Float(550), new Float(500), new Float(3000), new Float(1)));
 	}
-
 }

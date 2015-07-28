@@ -1,14 +1,14 @@
-package controller;
+package controller.student;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import model.Student;
-import model.StudentManager;
-import model.StudentManagerIMPL;
-import view.CheckPanel;
-import view.CreatePanel;
+import model.student.Student;
+import model.student.StudentManager;
+import model.student.StudentManagerIMPL;
+import view.student.CheckPanel;
+import view.student.CreatePanel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

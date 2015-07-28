@@ -1,10 +1,12 @@
-package model;
+package model.student;
 
 import java.io.Serializable;
 import java.util.Date;
 
 import javax.rmi.CORBA.Util;
 import javax.xml.crypto.Data;
+
+import model.Human;
 
 public class Student extends Human implements Serializable  {
 	private String comments;

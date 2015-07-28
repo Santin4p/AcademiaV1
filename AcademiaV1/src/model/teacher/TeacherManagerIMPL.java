@@ -1,10 +1,13 @@
-package model;
+package model.teacher;
 
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.FileObjectReaderIMPL;
+import model.FileObjectWriterIMPL;
 
 public class TeacherManagerIMPL implements TeacherManager {
 	List<Teacher> TeacherList = new ArrayList<Teacher>();
@@ -54,7 +57,7 @@ public class TeacherManagerIMPL implements TeacherManager {
 	@Override
 	public Teacher createTeacher(String dni, String name, String surnames) {
 		int mayor = lastID();
-		Teacher instancia = new Teacher(name, surnames, null, dni, (Float) null);
+		Teacher instancia = new Teacher(name, surnames, null, dni, 0);
 		TeacherList.add(instancia);
 		try (FileObjectWriterIMPL writer = new FileObjectWriterIMPL(fileName)) {
 			writer.writeObject(instancia);

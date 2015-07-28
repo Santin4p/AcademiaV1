@@ -1,4 +1,4 @@
-package prueba;
+package prueba.student;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,9 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import model.StudentManager;
-import model.StudentManagerIMPL;
-import controller.ParaCreatePanel;
+import model.student.StudentManager;
+import model.student.StudentManagerIMPL;
+import controller.student.ParaCreatePanel;
 
 public class PruebaCreatePanel extends JFrame {
 

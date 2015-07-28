@@ -1,4 +1,4 @@
-package view;
+package view.student;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
-public class CheckPanel extends JPanel {
+public class ChangePanel extends JPanel {
 	protected JTextField txtNombre;
 	protected JTextField txtApellidos;
 	protected JLabel lblObservaciones;
@@ -24,13 +24,15 @@ public class CheckPanel extends JPanel {
 	protected JTextField txtDNI;
 	protected JTextField txtObservaciones;
 	protected JLabel lblAlumno;
-	protected JComboBox comboBox;
+	protected JButton btnNewButton;
+	protected JTextField txtBuscarAlumno;
+	protected JButton btnBuscar;
+	protected JLabel lblID;
 
 	/**
 	 * Create the panel.
 	 */
-	
-	public CheckPanel() {
+	public ChangePanel() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 122, 92, 0, 74, 71, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 58, 62, 0, 0, 0, 0};
@@ -38,7 +40,7 @@ public class CheckPanel extends JPanel {
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
-		lblModificar = new JLabel("Consultar alumno");
+		lblModificar = new JLabel("Modificar alumno");
 		lblModificar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		GridBagConstraints gbc_lblModificar = new GridBagConstraints();
 		gbc_lblModificar.anchor = GridBagConstraints.SOUTH;
@@ -48,7 +50,7 @@ public class CheckPanel extends JPanel {
 		gbc_lblModificar.gridy = 0;
 		add(lblModificar, gbc_lblModificar);
 		
-		lblAlumno = new JLabel("Alumno:");
+		lblAlumno = new JLabel("Buscar alumno:");
 		GridBagConstraints gbc_lblAlumno = new GridBagConstraints();
 		gbc_lblAlumno.anchor = GridBagConstraints.WEST;
 		gbc_lblAlumno.insets = new Insets(0, 0, 5, 5);
@@ -56,14 +58,28 @@ public class CheckPanel extends JPanel {
 		gbc_lblAlumno.gridy = 2;
 		add(lblAlumno, gbc_lblAlumno);
 		
-		comboBox = new JComboBox();
-		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.gridwidth = 4;
-		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox.gridx = 2;
-		gbc_comboBox.gridy = 2;
-		add(comboBox, gbc_comboBox);
+		txtBuscarAlumno = new JTextField();
+		GridBagConstraints gbc_txtBuscarAlumno = new GridBagConstraints();
+		gbc_txtBuscarAlumno.insets = new Insets(0, 0, 5, 5);
+		gbc_txtBuscarAlumno.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtBuscarAlumno.gridx = 2;
+		gbc_txtBuscarAlumno.gridy = 2;
+		add(txtBuscarAlumno, gbc_txtBuscarAlumno);
+		txtBuscarAlumno.setColumns(10);
+		
+		btnBuscar = new JButton("Buscar");
+		GridBagConstraints gbc_btnBuscar = new GridBagConstraints();
+		gbc_btnBuscar.insets = new Insets(0, 0, 5, 5);
+		gbc_btnBuscar.gridx = 4;
+		gbc_btnBuscar.gridy = 2;
+		add(btnBuscar, gbc_btnBuscar);
+		
+		lblID = new JLabel("ID");
+		GridBagConstraints gbc_lblID = new GridBagConstraints();
+		gbc_lblID.insets = new Insets(0, 0, 5, 5);
+		gbc_lblID.gridx = 5;
+		gbc_lblID.gridy = 2;
+		add(lblID, gbc_lblID);
 		
 		lblNombre = new JLabel("Nombre:");
 		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
@@ -74,7 +90,6 @@ public class CheckPanel extends JPanel {
 		add(lblNombre, gbc_lblNombre);
 		
 		txtNombre = new JTextField();
-		txtNombre.setEditable(false);
 		GridBagConstraints gbc_txtNombre = new GridBagConstraints();
 		gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_txtNombre.fill = GridBagConstraints.HORIZONTAL;
@@ -92,7 +107,6 @@ public class CheckPanel extends JPanel {
 		add(lblApellidos, gbc_lblApellidos);
 		
 		txtApellidos = new JTextField();
-		txtApellidos.setEditable(false);
 		GridBagConstraints gbc_txtApellidos = new GridBagConstraints();
 		gbc_txtApellidos.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtApellidos.insets = new Insets(0, 0, 5, 5);
@@ -111,7 +125,6 @@ public class CheckPanel extends JPanel {
 		add(lblFechaNacimiento, gbc_lblFechaNacimiento);
 		
 		txtFechaNacimiento = new JTextField();
-		txtFechaNacimiento.setEditable(false);
 		GridBagConstraints gbc_txtFechaNacimiento = new GridBagConstraints();
 		gbc_txtFechaNacimiento.insets = new Insets(0, 0, 5, 5);
 		gbc_txtFechaNacimiento.fill = GridBagConstraints.HORIZONTAL;
@@ -129,7 +142,6 @@ public class CheckPanel extends JPanel {
 		add(lblDNI, gbc_lblDNI);
 		
 		txtDNI = new JTextField();
-		txtDNI.setEditable(false);
 		GridBagConstraints gbc_txtDNI = new GridBagConstraints();
 		gbc_txtDNI.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtDNI.insets = new Insets(0, 0, 5, 5);
@@ -148,7 +160,6 @@ public class CheckPanel extends JPanel {
 		add(lblObservaciones, gbc_lblObservaciones);
 		
 		txtObservaciones = new JTextField();
-		txtObservaciones.setEditable(false);
 		GridBagConstraints gbc_txtObservaciones = new GridBagConstraints();
 		gbc_txtObservaciones.gridheight = 2;
 		gbc_txtObservaciones.gridwidth = 4;
@@ -158,6 +169,13 @@ public class CheckPanel extends JPanel {
 		gbc_txtObservaciones.gridy = 5;
 		add(txtObservaciones, gbc_txtObservaciones);
 		txtObservaciones.setColumns(10);
+		
+		btnNewButton = new JButton("Modificar");
+		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton.gridx = 5;
+		gbc_btnNewButton.gridy = 7;
+		add(btnNewButton, gbc_btnNewButton);
 	}
 
 }

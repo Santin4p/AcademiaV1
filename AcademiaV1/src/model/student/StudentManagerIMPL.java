@@ -1,4 +1,4 @@
-package model;
+package model.student;
 
 import java.io.EOFException;
 import java.io.File;
@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import model.FileObjectReaderIMPL;
+import model.FileObjectWriterIMPL;
 
 public class StudentManagerIMPL implements StudentManager {
 	List<Student> StudentsList = new ArrayList<Student>();
