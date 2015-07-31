@@ -132,7 +132,7 @@ public class CreatePanelTeacher extends JPanel {
 		add(lblSueldo, gbc_lblSueldo);
 		
 		spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(550, 500, 3000, 1));
+		spinner.setModel(new SpinnerNumberModel(550, 550, 3000, 1));
 		GridBagConstraints gbc_spinner = new GridBagConstraints();
 		gbc_spinner.fill = GridBagConstraints.HORIZONTAL;
 		gbc_spinner.gridwidth = 2;

@@ -65,6 +65,6 @@ public class ParaCreateTeacher extends CreatePanelTeacher {
 		txtApellidos.setText("");
 		txtDNI.setText("");
 		dateChooser.setDate(null);
-		spinner.setValue(550);
+		spinner.setValue(550f);
 	}
 }

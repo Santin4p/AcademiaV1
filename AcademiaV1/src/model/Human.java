@@ -51,7 +51,7 @@ public class Human implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Human [name=" + name + ", surname=" + surname + "]";
+		return String.format("%s %s", name, surname);
 	}
 
 }

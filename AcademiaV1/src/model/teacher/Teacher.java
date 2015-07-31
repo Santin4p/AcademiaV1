@@ -9,9 +9,10 @@ public class Teacher extends Human implements Serializable {
 	private float sueldo;
 	private int id;
 	
-	public Teacher(String name, String surname, Date bornDate, String dni, float sueldo) {
+	public Teacher(String name, String surname, Date bornDate, String dni, float sueldo, int id) {
 		super(name, surname, bornDate, dni);
 		this.sueldo=sueldo;
+		this.id=id;
 		// TODO Auto-generated constructor stub
 	}
 	

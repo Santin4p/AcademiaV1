@@ -14,10 +14,11 @@ import model.teacher.TeacherManagerIMPL;
 import controller.student.ParaCreatePanel;
 import controller.teacher.ParaChangeTeacher;
 import controller.teacher.ParaCreateTeacher;
+import controller.teacher.ParaDeleteTeacher;
 
-public class PruebaCreateTeacher extends JFrame {
+public class PruebaDeleteTeacher extends JFrame {
 
-	private ParaCreateTeacher contentPane;
+	private ParaDeleteTeacher contentPane;
 	TeacherManager nuevo=new TeacherManagerIMPL();
 	
 	/**
@@ -27,7 +28,7 @@ public class PruebaCreateTeacher extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PruebaCreateTeacher frame = new PruebaCreateTeacher();
+					PruebaDeleteTeacher frame = new PruebaDeleteTeacher();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,10 +40,10 @@ public class PruebaCreateTeacher extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PruebaCreateTeacher() {
+	public PruebaDeleteTeacher() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 450);
-		contentPane = new ParaCreateTeacher(nuevo);
+		contentPane = new ParaDeleteTeacher(nuevo);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 	}

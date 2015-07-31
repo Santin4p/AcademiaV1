@@ -57,7 +57,7 @@ public class TeacherManagerIMPL implements TeacherManager {
 	@Override
 	public Teacher createTeacher(String dni, String name, String surnames) {
 		int mayor = lastID();
-		Teacher instancia = new Teacher(name, surnames, null, dni, 0);
+		Teacher instancia = new Teacher(name, surnames, null, dni, 0 , mayor);
 		TeacherList.add(instancia);
 		try (FileObjectWriterIMPL writer = new FileObjectWriterIMPL(fileName)) {
 			writer.writeObject(instancia);
