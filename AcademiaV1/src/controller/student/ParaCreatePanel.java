@@ -26,7 +26,7 @@ public class ParaCreatePanel extends CreatePanel {
 	private void eventos() {
 		btnCrearAlumno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!comprobarCampos()) {
+				if (comprobarCampos()) {
 					currentStudent = instancia.createStudent(txtDNI.getText(),
 							txtNombre.getText(), txtApellidos.getText());
 					currentStudent.setBornDate(dateChooser.getDate());
@@ -55,10 +55,11 @@ public class ParaCreatePanel extends CreatePanel {
 		if (txtNombre.getText().isEmpty() && txtApellidos.getText().isEmpty()
 				&& txtDNI.getText().isEmpty()
 				&& txtObservaciones.getText().isEmpty()
+				&& dateChooser.getDate() != null
 				&& dateChooser.getDate().toString().isEmpty()) {
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 	private void vaciarCampos() {
