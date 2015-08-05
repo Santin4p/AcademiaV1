@@ -1,7 +1,5 @@
 package prueba.group;
 
-import group.ParaCreateGroup;
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -15,6 +13,7 @@ import model.student.StudentManager;
 import model.student.StudentManagerIMPL;
 import model.teacher.TeacherManager;
 import model.teacher.TeacherManagerIMPL;
+import controller.group.ParaCreateGroup;
 import controller.student.ParaCreatePanel;
 
 public class PruebaCreatePanel extends JFrame {

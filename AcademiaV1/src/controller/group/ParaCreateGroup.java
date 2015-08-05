@@ -1,4 +1,4 @@
-package group;
+package controller.group;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;

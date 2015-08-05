@@ -1,8 +1,5 @@
 package prueba.group;
 
-import group.ParaCreateGroup;
-import group.ParaDeleteGroup;
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -16,6 +13,8 @@ import model.student.StudentManager;
 import model.student.StudentManagerIMPL;
 import model.teacher.TeacherManager;
 import model.teacher.TeacherManagerIMPL;
+import controller.group.ParaCreateGroup;
+import controller.group.ParaDeleteGroup;
 import controller.student.ParaCreatePanel;
 
 public class PruebaDeletePanel extends JFrame {

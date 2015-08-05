@@ -1,4 +1,4 @@
-package group;
+package controller.group;
 
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -11,6 +11,7 @@ import model.group.GroupManager;
 import model.student.Student;
 import model.student.StudentManager;
 import model.teacher.Teacher;
+import view.group.CheckGroup;
 import view.group.CreateGroup;
 import view.group.DeleteGroup;
 
@@ -19,14 +20,14 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParaDeleteGroup extends DeleteGroup {
+public class ParaCheckGroup extends CheckGroup {
 	GroupManager instanciaGrupo;
 	Group currentGroup;
 	Teacher currentTeacher;
 	Student currentStudent;
 	DefaultTableModel modelo;
 
-	public ParaDeleteGroup(GroupManager groupM) {
+	public ParaCheckGroup(GroupManager groupM) {
 		// Meter asignacion dentro de los constructores
 		modelo = (DefaultTableModel) table.getModel();
 		this.instanciaGrupo = groupM;
@@ -42,13 +43,6 @@ public class ParaDeleteGroup extends DeleteGroup {
 				model.removeAllElements();
 				borrarTabla();
 				RellenarComboBoxGrupos();
-			}
-		});
-
-		btnBorrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				instanciaGrupo.deleteGroup((Group) comboGroup.getSelectedItem());
-				borrarTabla();
 			}
 		});
 
