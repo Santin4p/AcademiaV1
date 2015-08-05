@@ -53,7 +53,7 @@ public class GroupManagerIMPL implements GroupManager {
 		Group instancia = new Group(mayor, groupName, teacher.getId(),
 				StudentsID);
 		GroupList.add(instancia);
-		
+
 		try (FileObjectWriterIMPL writer = new FileObjectWriterIMPL(fileName)) {
 			writer.writeObject(instancia);
 		} catch (Exception e) {
@@ -69,7 +69,7 @@ public class GroupManagerIMPL implements GroupManager {
 		try (FileObjectWriterIMPL writer = new FileObjectWriterIMPL(fileName)) {
 			writer.writeObject(group);
 		} catch (Exception e) {
-			
+
 		}
 
 	}
@@ -91,12 +91,11 @@ public class GroupManagerIMPL implements GroupManager {
 
 	@Override
 	public List<Student> getStudentsFromGroup(Group group) {
-		List<Student> listaInst=new ArrayList<Student>();
-		
+		List<Student> listaInst = new ArrayList<Student>();
+
 		for (Integer group1 : group.getStudentsIds()) {
 			listaInst.add(SManager.getStudent(group1));
 		}
-		
 		return listaInst;
 	}
 
@@ -107,9 +106,9 @@ public class GroupManagerIMPL implements GroupManager {
 
 	@Override
 	public List<Group> getAllGroupsByTeacher(Teacher teacher) {
-		List<Group> listaGrup=new ArrayList<Group>();
+		List<Group> listaGrup = new ArrayList<Group>();
 		for (Group group : GroupList) {
-			if (group.getIdTeacher()==teacher.getId()) {
+			if (group.getIdTeacher() == teacher.getId()) {
 				listaGrup.add(group);
 			}
 		}
@@ -118,7 +117,7 @@ public class GroupManagerIMPL implements GroupManager {
 
 	@Override
 	public List<Group> getAllGroupsByStudent(Student student) {
-		List<Group> listaGrup=new ArrayList<Group>();
+		List<Group> listaGrup = new ArrayList<Group>();
 		for (Group groupLista : GroupList) {
 			for (Integer studentID : groupLista.getStudentsIds()) {
 				if (studentID.equals(student.getId())) {
@@ -143,9 +142,8 @@ public class GroupManagerIMPL implements GroupManager {
 		return SManager;
 	}
 
-
 	public TeacherManager getTManager() {
 		return TManager;
 	}
-	
+
 }

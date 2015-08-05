@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Group implements Serializable{
-	
 	final int id;
 	final int idTeacher;
 	final List<Integer> studentsIds;
@@ -37,4 +36,9 @@ public class Group implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}			
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }
